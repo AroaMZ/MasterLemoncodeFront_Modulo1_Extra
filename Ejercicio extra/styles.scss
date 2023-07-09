@@ -1,0 +1,140 @@
+$principal-color: rgba(206, 202, 202, 0.519);
+$second-color: rgb(39, 38, 38);
+$third-color: rgb(91, 147, 8);
+$footer-color: antiquewhite;
+$border-menu: 1px solid rgba(206, 202, 202, 0.519);
+$padding-menu: 15px;
+$standar-border: 1px solid black;
+
+html {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: $principal-color;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+}
+/*header*/
+
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+.page-title {
+  background-color: $third-color;
+  padding: 10px;
+  margin-top: 3px;
+}
+
+/*Menu izquierdo*/
+
+.page-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+.page-container nav {
+  background-color: $second-color;
+}
+.menu-container {
+  width: 200px;
+  position: sticky;
+  top: 0px;
+}
+.menu-title {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  padding: $padding-menu;
+  text-align: center;
+}
+
+.menu-container ul {
+  padding: 0;
+  margin: 0;
+}
+.menu-container ul li {
+  list-style: none;
+  background-color: $footer-color;
+  padding: $padding-menu;
+  border: $border-menu;
+}
+
+/*contenedor principal*/
+main {
+  flex: 1;
+  padding: 20px;
+}
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 10px;
+  justify-content: space-around;
+}
+.card {
+  width: 200px;
+  padding: $padding-menu;
+  background-color: white;
+  border-radius: 3px;
+  border: $standar-border;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+.card img {
+  border-radius: 100%;
+  width: 50%;
+}
+
+/*footer*/
+footer {
+  background-color: $footer-color;
+  padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  /*header*/
+  .toolbar {
+    display: none;
+  }
+
+  /*contenedor principal*/
+  .page-container {
+    flex-direction: column;
+    width: 100vw;
+  }
+  /*menu superior*/
+  .page-container nav {
+    position: sticky;
+    display: flex;
+    top: 0px;
+  }
+  .menu-container {
+    width: 100vw;
+  }
+  .menu-title {
+    display: none;
+  }
+  .menu-container ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  main .list {
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: center;
+  }
+}
